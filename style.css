@@ -1,7 +1,9 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #323232;
+  color: #ffffff;
 }
+
 
 .container {
   max-width: 600px;
@@ -30,4 +32,26 @@ body {
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+#toggle-favorite-btn {
+  display: none;
+}
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.favorite-card {
+  color: black;
+  background-color: #c1baba;
+  width: 25%;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+
 }
