@@ -38,6 +38,14 @@ body {
   display: none;
 }
 
+.star-icon {
+  font-size: 30px;
+  color: yellow;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+}
+
 .favorites-container {
   display: flex;
   flex-wrap: wrap;
