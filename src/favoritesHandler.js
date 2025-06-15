@@ -1,12 +1,10 @@
-const toggleFavoriteIcon = function toggleFavoriteIcon(isFavorite, el) {
-  el.classList.toggle('fa', isFavorite);
-  el.classList.toggle('far', !isFavorite);
-};
-
-const showFavoriteCard = function showFavoriteCard(
-  { quote, author },
+const showFavoriteCard = (
+  {
+    quote,
+    author,
+  },
   container,
-) {
+) => {
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
 
@@ -18,7 +16,7 @@ const showFavoriteCard = function showFavoriteCard(
   container.appendChild(favoriteCard);
 };
 
-const hideFavoriteCard = function hideFavoriteCard({ quote }) {
+const hideFavoriteCard = ({ quote }) => {
   const favoriteCards = document.querySelectorAll('.favorite-card');
   favoriteCards.forEach((card) => {
     if (card.textContent.includes(quote)) {
@@ -27,8 +25,13 @@ const hideFavoriteCard = function hideFavoriteCard({ quote }) {
   });
 };
 
+const toggleFavoriteIcon = (isFavorite, el) => {
+  el.classList.toggle('fa', isFavorite);
+  el.classList.toggle('far', !isFavorite);
+};
+
 export {
-  toggleFavoriteIcon,
   showFavoriteCard,
   hideFavoriteCard,
+  toggleFavoriteIcon,
 };
