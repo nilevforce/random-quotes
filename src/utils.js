@@ -6,5 +6,7 @@ const generateRandomInt = (max, min = 0) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+const generateHexId = () => Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+
 // eslint-disable-next-line
-export { generateRandomInt };
+export { generateRandomInt, generateHexId };
