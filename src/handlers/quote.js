@@ -1,9 +1,6 @@
 /* eslint-disable */
-import quotes from '../data/quotes.js';
 import { generateRandomInt } from '../utils.js';
 import { handleFavorite } from './favorites.js';
-
-let currentQuote;
 
 const displayQuote = ({ text, author, isFavorite }) => {
   const quoteElement = document.getElementById('quote');
@@ -20,13 +17,12 @@ const chooseRandomQuote = (quotesList) => {
   return quotesList[randomIndex];
 };
 
-const handleQuote = () => {
+const handleQuote = (quotes, setCurrentQuote) => {
   const randomQuote = chooseRandomQuote(quotes);
-  currentQuote = randomQuote;
+  setCurrentQuote(randomQuote)
   displayQuote(randomQuote);
 };
 
 export {
   handleQuote,
-  currentQuote,
 };
