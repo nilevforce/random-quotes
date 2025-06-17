@@ -1,10 +1,7 @@
 /* eslint-disable */
-import { currentQuote } from '../../index.js';
+import { favoriteBtn } from '../../index.js';
 
-const favoritesContainer = document.getElementById('favorites-container');
-const toggleBtn = document.getElementById('toggle-favorite-btn');
-
-const toggleFavoriteIcon = (isFavorite, el) => {
+const toggleFavoriteBtnIcon = (isFavorite, el) => {
   el.classList.toggle('fa', isFavorite);
   el.classList.toggle('far', !isFavorite);
 };
@@ -14,8 +11,8 @@ const toggleFavoriteBtnVisibility = (btn, shouldShow) => {
 };
 
 const handleFavorite = (isFavorite) => {
-  toggleFavoriteBtnVisibility(toggleBtn, true);
-  toggleFavoriteIcon(isFavorite, toggleBtn);
+  toggleFavoriteBtnVisibility(favoriteBtn, true);
+  toggleFavoriteBtnIcon(isFavorite, favoriteBtn);
 };
 
 const showFavoriteCard = ({ text, author }, container) => {
@@ -39,20 +36,20 @@ const hideFavoriteCard = ({ text }) => {
   });
 };
 
-const toggleFavorite = () => {
-  currentQuote.isFavorite = !currentQuote.isFavorite;
+const toggleFavorite = (quote, btn, container) => {
+  quote.isFavorite = !quote.isFavorite;
+  const { text, author, isFavorite } = quote;
 
-  toggleFavoriteIcon(currentQuote.isFavorite, toggleBtn);
+  toggleFavoriteBtnIcon(isFavorite, btn);
 
-  if (currentQuote.isFavorite) {
-    showFavoriteCard(currentQuote, favoritesContainer);
+  if (isFavorite) {
+    showFavoriteCard({ text, author }, container);
   } else {
-    hideFavoriteCard(currentQuote, favoritesContainer);
+    hideFavoriteCard({ text, author }, container);
   }
 };
 
-toggleBtn.addEventListener('click', toggleFavorite);
-
 export {
   handleFavorite,
+  toggleFavorite
 };
