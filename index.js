@@ -16,12 +16,12 @@ generateBtn.addEventListener(
 );
 
 const favoritesContainer = document.getElementById('favorites-container');
-const favoriteBtn = document.getElementById('favorite-btn');
-favoriteBtn.addEventListener(
+const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
+quoteFavoriteBtn.addEventListener(
   'click',
   () => toggleFavorite(
     currentQuote,
-    favoriteBtn,
+    quoteFavoriteBtn,
     favoritesContainer,
   ),
 );
@@ -29,4 +29,4 @@ favoriteBtn.addEventListener(
 // Get and show quote when app first loads
 // handleQuote(quotes, setCurrentQuote);
 
-export { currentQuote, favoriteBtn };
+export { currentQuote, quoteFavoriteBtn };
